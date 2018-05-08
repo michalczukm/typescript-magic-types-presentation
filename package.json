@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "build": "tsc",
-    "build:watch": "tsc --watch"
+    "tsnode": "ts-node"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   }
 }

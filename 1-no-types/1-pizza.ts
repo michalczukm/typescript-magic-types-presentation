@@ -1,3 +1,12 @@
+class Client {
+    constructor(public name){
+    }
+
+    eat(meal): void {
+        console.log(`${meal.description}, nom nom nom `);
+    }
+}
+
 function handleOrder(order) {
     const recipe = getRecipe(order.pizza);
     const readyPizza = cook(recipe);
@@ -18,11 +27,7 @@ function getRecipe(pizza) {
     }
 }
 
-const client = {
-    name: 'Andrew',
-    eat: (meal) => console.log(`${meal}, nom nom nom `)
-};
-
+const client = new Client('Andrew');
 const order = { 
     client,
     pizza: { type: 'hawaii' }
