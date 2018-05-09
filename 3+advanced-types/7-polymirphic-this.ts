@@ -6,24 +6,6 @@ interface Cake {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class CakeBuilder {
     protected cake = {} as Cake;
 
@@ -50,28 +32,8 @@ class CakeBuilder {
 }
 
 
-
-
-
-
-
-
-
-
-
 //=============================================
 // lets use polymorphic this
-
-
-
-
-
-
-
-
-
-
-
 class BetterCakeBuilder extends CakeBuilder {
     withSuperFat(calories: number): this {
         this.cake.calories = calories * 100;
@@ -87,24 +49,8 @@ class BetterCakeBuilder extends CakeBuilder {
 }
 
 
-
-
-
-
-
-
-
 // ==================================
-
 // lets create even better builder with index types
-
-
-
-
-
-
-
-
 class UlimateCakeBuilder {
     private cake = {} as Cake;
 
@@ -118,9 +64,6 @@ class UlimateCakeBuilder {
     }
 }
 
-
-
-
 {
     const cake = new UlimateCakeBuilder()
         .withField('calories', 50)
@@ -129,12 +72,5 @@ class UlimateCakeBuilder {
 }
 
 
-
-
-
-
-
-
-
-
+// fake module
 export default {};

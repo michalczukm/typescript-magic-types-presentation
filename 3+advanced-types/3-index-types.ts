@@ -13,27 +13,8 @@ let person: Person = {
 
 let strings: string[] = pluck(person, ['name']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ------------------------------------------------------------
+// how to deal with reactive forms in Angular - how to make them strong typed!
 import {AbstractControl, FormArray, FormGroup, ValidationErrors} from '@angular/forms';
 
 export type FormStrongTypedExample = {
@@ -53,6 +34,7 @@ function createReadonlyForm<TForm>(form: FormGroup): {[K in keyof TForm]: Abstra
     //...
 })
 class FooComponent implements OnInit {
+    form: FormGroup;
 
     ngOnInit(): void {
         const readonlyTypedForm = createReadonlyForm<FormStrongTypedExample>(this.form);

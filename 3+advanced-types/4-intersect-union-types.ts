@@ -22,44 +22,11 @@ type Cake = {
 
 
 //==================== intersect
-
-
-
-
-
-
-
-
-
-
 type MarketPizzaProduct = Pizza & MarketProduct;
 const marketPizzaProduct = {} as MarketPizzaProduct;
 
-
-
-
-
-
-
 type MarketPizzaProductDraft = MarketPizzaProduct & { isDraft: boolean };
-
-
-
-
-
-
-
-
 type MarketPizzaProductNullableDraft = Partial<MarketPizzaProduct> & { isDraft: boolean };
-
-
-
-
-
-
-
-
-
 
 type Readonly<T> = {
     readonly [P in keyof T]: T[P];
@@ -70,23 +37,7 @@ type Partial<T> = {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ==================================== union
-
-
 type PizzaOrCake = Pizza | Cake;
 
 const pizzaOrCake = {
@@ -97,25 +48,8 @@ const pizzaOrCake = {
 } as PizzaOrCake;
 
 
-
-
-
-
-
-
-
-
-
 // how we dispatch the type?
 // if its not class. Duck typing
-
-
-
-
-
-
-
-
 if ('calories' in pizzaOrCake) {
     // so its Cake
     pizzaOrCake.flavour;
@@ -123,20 +57,6 @@ if ('calories' in pizzaOrCake) {
     // else it must be Pizza
     pizzaOrCake.pizzaType;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // wrap it in typeGuard
 const isCake = (item: PizzaOrCake): item is Cake => 'calories' in item;
@@ -148,21 +68,6 @@ if (isCake(pizzaOrCake)) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // what about generic isCake or whatever guard
 const isCakeOrWhatever = <T extends object>(item: Cake | T): item is Cake => 'calories' in item;
 
@@ -172,31 +77,14 @@ if (isCakeOrWhatever(pizzaOrCake)) {
     pizzaOrCake.pizzaType
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+// other examples
 type OrString<T> = {
     [P in keyof T]: T[P] | string;
 }
-
 
 type PizzaOrAnyValueIsString = OrString<Pizza>;
 const orAnyValueIsString = {} as PizzaOrAnyValueIsString;
 
 
-
-
-
-
-
-
+// fake module
 export default {};

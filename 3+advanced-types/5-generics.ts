@@ -20,69 +20,11 @@ type MarketProduct = {
 } & ResponseCode;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 type MarketPizzaProduct = Pizza & MarketProduct;
-
-
-
-
-
-
-
-
-
-
 type MarketPizzaProductDraft = MarketPizzaProduct & { isDraft: boolean };
-
-
-
-
-
-
-
-
-
 type MarketPizzaProductNullableDraft = Partial<MarketPizzaProduct> & { isDraft: boolean };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //==============
-
-
-
-
-
-
-
-
-
 // pagination response - the simplest example
 type Pagination<T extends ResponseCode & Object> = {
     values: T[],
@@ -93,26 +35,6 @@ type Pagination<T extends ResponseCode & Object> = {
 type PaginatedPizzaResponse = Pagination<Pizza>;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // but you might get error instead of data
 type ResponseError = {
     errorMessage: string;
@@ -121,24 +43,6 @@ type ResponseError = {
 
 type RealPizzaResponse = Pizza | ResponseError;
 type RealPaginationResponse<T extends ResponseCode & Object> = Pagination<T> | ResponseError;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // fake module

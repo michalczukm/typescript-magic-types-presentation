@@ -20,26 +20,9 @@ type Cake = {
 
 type ProductType = 'cake' | 'pizza';
 
-
-
-
-
-
-
-
-
-
-
-
-
 type Foo<T> = T extends 'pizza' ? Pizza : 
     T extends 'cake' ? Cake : 
     { extra: number };
-
-
-
-
-
     
 function handlePizza<T>(argument: Foo<'pizza'>) {
     argument.pizzaType
