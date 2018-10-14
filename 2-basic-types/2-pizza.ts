@@ -22,7 +22,7 @@ class Meal {
 }
 
 // impl
-function handleOrder(order: Order) {
+function handleOrder(order: Order): void {
     const recipe = getRecipe(order.pizza);
     const readyPizza = cook(recipe);
 
@@ -46,10 +46,10 @@ function getRecipe(pizza: Pizza): string[] {
 
 const client = new Client('Andrew');
 
-const order = { 
+const order: Order = { 
     client,
     pizza: { type: 'hawaii' }
-} as Order;
+};
 
 
 handleOrder(order);

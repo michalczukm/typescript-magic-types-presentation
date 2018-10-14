@@ -32,7 +32,7 @@ asserted instanceof Pizza; // --> false
 
 
 // =================
-// interface
+// those definitions will merge to one Cake
 interface Cake {
     client: string;
 }
@@ -47,6 +47,7 @@ const cake = {} as Cake;
 // =================
 // type
 // documentation said that you cannot extend nor inherit from type
+// ... which is clearly not true.
 interface ExtendedMarketProduct extends MarketProduct {
     newField: number;
 }
