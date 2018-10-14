@@ -2,16 +2,16 @@ function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
     return names.map(n => o[n]);
 }
 
-interface Person {
-    name: string;
-    age: number;
+type Person = {
+    name: string,
+    age: number
 }
 let person: Person = {
     name: 'Jarid',
     age: 35
 };
 
-let strings: string[] = pluck(person, ['name']);
+let ageValues: number[] = pluck(person, ['age']);
 
 // ------------------------------------------------------------
 // how to deal with reactive forms in Angular - how to make them strong typed!
@@ -20,7 +20,7 @@ import {AbstractControl, FormArray, FormGroup, ValidationErrors} from '@angular/
 export type FormStrongTypedExample = {
     field: AbstractControl,
     anotherField: AbstractControl,
-    theArrayField: FormArray,
+    theArrayField: FormArray
 };
 
 function createReadonlyForm<TForm>(form: FormGroup): {[K in keyof TForm]: AbstractControl & FormArray & FormGroup} {
@@ -37,6 +37,6 @@ class FooComponent implements OnInit {
     form: FormGroup;
 
     ngOnInit(): void {
-        const readonlyTypedForm = createReadonlyForm<FormStrongTypedExample>(this.form);
+        const readonlyTypedForm: FormStrongTypedExample = createReadonlyForm<FormStrongTypedExample>(this.form);
     }
 }

@@ -34,6 +34,11 @@ type Pagination<T extends ResponseCode & Object> = {
 
 type PaginatedPizzaResponse = Pagination<Pizza>;
 
+function paginatePizza(paginationResponse: Pagination<Pizza>) {
+    paginationResponse.maxPage;
+    paginationResponse.values[0];
+}
+
 
 // but you might get error instead of data
 type ResponseError = {
@@ -44,6 +49,19 @@ type ResponseError = {
 type RealPizzaResponse = Pizza | ResponseError;
 type RealPaginationResponse<T extends ResponseCode & Object> = Pagination<T> | ResponseError;
 
+// type guard
+const isResponseError = (response: RealPaginationResponse<Pizza>): response is ResponseError => {
+    return (<keyof ResponseError>'errorMessage') in response;
+}
+
+function realPaginatePizza(paginationResponse: RealPaginationResponse<Pizza>) {
+    if(isResponseError(paginationResponse)) {
+        paginationResponse.errorMessage;
+    } else {
+        paginationResponse.maxPage;
+        paginationResponse.values;
+    }
+}
 
 // fake module
 export default {};

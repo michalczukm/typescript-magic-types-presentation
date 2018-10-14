@@ -27,6 +27,7 @@ const marketPizzaProduct = {} as MarketPizzaProduct;
 
 type MarketPizzaProductDraft = MarketPizzaProduct & { isDraft: boolean };
 type MarketPizzaProductNullableDraft = Partial<MarketPizzaProduct> & { isDraft: boolean };
+const pizzaDraft: MarketPizzaProductNullableDraft = { isDraft: true };
 
 type Readonly<T> = {
     readonly [P in keyof T]: T[P];
@@ -40,12 +41,15 @@ type Partial<T> = {
 // ==================================== union
 type PizzaOrCake = Pizza | Cake;
 
-const pizzaOrCake = {
+const pizzaOrCake: PizzaOrCake = {
     calories: 500,
     flavour: 'sweet',
     pizzaType: PizzaType.hawaii,
     shape: 'round'
-} as PizzaOrCake;
+};
+
+// but no fields here:
+// pizzaOrCake.
 
 
 // how we dispatch the type?
@@ -92,6 +96,8 @@ type PizzaAndUndefined = Pizza & undefined;
 
 const pizzaOrUndefined = {} as PizzaOrUndefined;
 const pizzaAndUndefined = {} as PizzaAndUndefined;
+
+// One more example in file 9!
 
 
 // fake module
