@@ -11,6 +11,21 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //======= nullable
 {
     type MarketProduct = {
@@ -22,6 +37,16 @@
         return product.price || 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 //======= never / void
@@ -52,6 +77,22 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //======= unknown
 // Its like any - but you cannot do anything with it 
 // ... just pass or dispatch type
@@ -61,9 +102,28 @@
         name: string;
     };
 
+
+
+
+
+
+
+
+
+
+
     const isMarketProductGuard = (value: unknown): value is MarketProduct => {
+        // we cannot do this - it might not be object
+        // ('name' as (keyof MarketProduct)) in value;
         return !!(value as MarketProduct).name && typeof (value as MarketProduct).name === 'string';
     } 
+
+
+
+
+
+
+
 
     const foo: unknown = { name: 'Sweet Mike' };
 
@@ -73,6 +133,25 @@
 
     // :( don't try this at home
     (foo as any).name;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     function handleUnknown(value: unknown): void {
         if (typeof value === 'string') {
@@ -86,6 +165,10 @@
             value.price;
         }
     }
+
+
+
+    
 
     // IMO - its good when you want to postpone moment of type dispatch
     // or you want to mark field as - there is sth there but DON'T TOUCH IT

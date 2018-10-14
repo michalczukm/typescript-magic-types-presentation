@@ -21,14 +21,57 @@ type Cake = {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //==================== intersect
 type MarketPizzaProduct = Pizza & MarketProduct;
 const marketPizzaProduct = {} as MarketPizzaProduct;
 
+
+
+
+
+
+
+
+
+
+
+
+
+// but - if we want to save draft
 type MarketPizzaProductDraft = MarketPizzaProduct & { isDraft: boolean };
 type MarketPizzaProductNullableDraft = Partial<MarketPizzaProduct> & { isDraft: boolean };
 const pizzaDraft: MarketPizzaProductNullableDraft = { isDraft: true };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// btw already build in TypeScript:
 type Readonly<T> = {
     readonly [P in keyof T]: T[P];
 }
@@ -36,6 +79,12 @@ type Readonly<T> = {
 type Partial<T> = {
     [P in keyof T]?: T[P];
 }
+
+
+
+
+
+
 
 
 // ==================================== union
@@ -62,14 +111,51 @@ if ('calories' in pizzaOrCake) {
     pizzaOrCake.pizzaType;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // wrap it in typeGuard
 const isCake = (item: PizzaOrCake): item is Cake => 'calories' in item;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if (isCake(pizzaOrCake)) {
     pizzaOrCake.flavour
 } else {
     pizzaOrCake.pizzaType
 }
+
+
+
+
+
+
+
+
+
 
 
 // what about generic isCake or whatever guard
@@ -81,6 +167,14 @@ if (isCakeOrWhatever(pizzaOrCake)) {
     pizzaOrCake.pizzaType
 }
 
+
+
+
+
+
+
+
+
 // other examples
 type OrString<T> = {
     [P in keyof T]: T[P] | string;
@@ -88,6 +182,17 @@ type OrString<T> = {
 
 type PizzaOrAnyValueIsString = OrString<Pizza>;
 const orAnyValueIsString = {} as PizzaOrAnyValueIsString;
+
+
+
+
+
+
+
+
+
+
+
 
 
 // undefined with union and intersect

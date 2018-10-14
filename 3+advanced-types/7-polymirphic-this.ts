@@ -6,6 +6,40 @@ interface Cake {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// lets create fluent builder for Cake
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class CakeBuilder {
     protected cake = {} as Cake;
 
@@ -24,12 +58,38 @@ class CakeBuilder {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
 {
     const cake = new CakeBuilder()
         .withCalories(100)
         .withFlavour('sweet')
         .build();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //=============================================
@@ -45,8 +105,23 @@ class BetterCakeBuilder extends CakeBuilder {
 {
     const cake = new BetterCakeBuilder()
         .withSuperFat(500)
-        .build;
+        .build();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ==================================
@@ -70,6 +145,12 @@ class UlimateCakeBuilder {
         .withField('flavour', 'sweet')
         .build();
 }
+
+
+
+
+
+
 
 
 // fake module

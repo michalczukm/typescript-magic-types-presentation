@@ -20,15 +20,57 @@ type MarketProduct = {
 };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // =================
 // class
 const instance = new Pizza();
 const asserted = {} as Pizza;
 
+
+instance instanceof Pizza;
+asserted instanceof Pizza;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 instance instanceof Pizza; // --> true
 asserted instanceof Pizza; // --> false
 
 // think about your API responses
+
+
+
+
+
+
+
+
+
+
 
 
 // =================
@@ -44,9 +86,26 @@ interface Cake {
 const cake = {} as Cake;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // =================
 // type
-// documentation said that you cannot extend nor inherit from type
+// documentation said that you cannot extend 
+// nor inherit from type
 // ... which is clearly not true.
 interface ExtendedMarketProduct extends MarketProduct {
     newField: number;
@@ -60,6 +119,10 @@ class ImplementedMarketProduct implements MarketProduct {
 }
 
 const implemented = new ImplementedMarketProduct();
+
+
+
+
 
 
 // rest of the presentation is based on types

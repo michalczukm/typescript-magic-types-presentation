@@ -8,8 +8,21 @@
         name: string;
     };
 
-    type ComponentStateType = 'create' | 'edit'
+    type ComponentStateType = 'create' | 'edit';
     
+
+
+
+
+
+
+
+
+
+
+
+
+
     type ComponentStateHandler = {
         [Key in ComponentStateType]: {
             save: (product: MarketProduct) => Promise<void>,
@@ -19,6 +32,17 @@
             }
         }
     };
+
+
+
+
+
+
+
+
+
+
+
     
     class SomeComponent {
         private stateHandler: ComponentStateHandler = {

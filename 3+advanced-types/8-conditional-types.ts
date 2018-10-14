@@ -18,20 +18,51 @@ type Cake = {
     calories: number
 };
 
+
+
+
+
+
+
+
+
+
+
+
 type ProductType = 'cake' | 'pizza';
 
-type Foo<T> = T extends 'pizza' ? Pizza : 
+type Foo<T> = 
+    T extends 'pizza' ? Pizza : 
     T extends 'cake' ? Cake : 
     { extra: number };
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function handlePizza<T>(argument: Foo<'pizza'>) {
-    argument.pizzaType
+    argument.delimiter;
 }
 
 function handleCake(argument: Foo<'cake'>) {
-    argument.flavour
+    argument.flavour;
 }
 
 function handleExtra(argument: Foo<{}>) {
-    argument.extra
+    argument.extra;
 }

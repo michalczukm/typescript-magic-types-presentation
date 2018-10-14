@@ -13,6 +13,37 @@ let person: Person = {
 
 let ageValues: number[] = pluck(person, ['age']);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// One more example in file 9!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------------------------------------------------
 // how to deal with reactive forms in Angular - how to make them strong typed!
 import {AbstractControl, FormArray, FormGroup, ValidationErrors} from '@angular/forms';
