@@ -86,5 +86,13 @@ type PizzaOrAnyValueIsString = OrString<Pizza>;
 const orAnyValueIsString = {} as PizzaOrAnyValueIsString;
 
 
+// undefined with union and intersect
+type PizzaOrUndefined = Pizza | undefined;
+type PizzaAndUndefined = Pizza & undefined;
+
+const pizzaOrUndefined = {} as PizzaOrUndefined;
+const pizzaAndUndefined = {} as PizzaAndUndefined;
+
+
 // fake module
 export default {};
