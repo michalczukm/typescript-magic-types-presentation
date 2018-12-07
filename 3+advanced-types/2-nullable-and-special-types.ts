@@ -1,4 +1,4 @@
-//======= undefindable
+//======= optional
 {
     type MarketProduct = {
         price?: number; //<-- number | undefined
